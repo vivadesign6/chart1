@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Competitive Radar Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="radarChart"></canvas>
+    <script>
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        
+        const data = {
+            labels: ["Brand Awareness", "User Engagement", "Mobile Experience", "Learning Depth", "Social Media", "Content Quality", "Gamification", "Value for Money"],
+            datasets: [
+                {
+                    label: 'Duolingo',
+                    data: [80, 90, 75, 85, 60, 70, 80, 95],
+                    fill: true,
+                    backgroundColor: 'rgba(88, 204, 2, 0.5)',
+                    borderColor: 'rgb(88, 204, 2)',
+                    pointBackgroundColor: 'rgb(88, 204, 2)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(88, 204, 2)'
+                },
+                {
+                    label: 'Babbel',
+                    data: [60, 70, 85, 75, 80, 95, 70, 85],
+                    fill: true,
+                    backgroundColor: 'rgba(49, 137, 217, 0.5)',
+                    borderColor: 'rgb(49, 137, 217)',
+                    pointBackgroundColor: 'rgb(49, 137, 217)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(49, 137, 217)'
+                },
+                {
+                    label: 'Rosetta Stone',
+                    data: [50, 60, 70, 80, 90, 85, 75, 65],
+                    fill: true,
+                    backgroundColor: 'rgba(217, 49, 49, 0.5)',
+                    borderColor: 'rgb(217, 49, 49)',
+                    pointBackgroundColor: 'rgb(217, 49, 49)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(217, 49, 49)'
+                },
+                {
+                    label: 'Memrise',
+                    data: [55, 75, 65, 85, 70, 60, 95, 80],
+                    fill: true,
+                    backgroundColor: 'rgba(156, 49, 217, 0.5)',
+                    borderColor: 'rgb(156, 49, 217)',
+                    pointBackgroundColor: 'rgb(156, 49, 217)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(156, 49, 217)'
+                }
+            ]
+        };
+        
+        new Chart(ctx, {
+            type: 'radar',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
